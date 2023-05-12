@@ -16,13 +16,13 @@ def visibility_application(**kwargs):
     )
     __dependencies_rules__(
         (
-            "*",  # applies to everything in this BUILD file
-            "/**",  # allow all dependencies in this subtree
-            f"//src/apps/utils/*",
-            f"//src/shared/*",
+            "*",
+            "/**",
+            "//src/apps/utils/*",
+            "//src/shared/*",
             *(f"//{path}" for path in allowed_dependencies),
-            "//3rdparty/requirements#click",  # only some 3rd party libraries
-            "!*",  # nothing else
+            "//3rdparty/requirements#click",
+            "!*",
         )
     )
 
